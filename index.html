@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>표적항암치료 비용 완전 가이드 | 위드힘병원</title>
+<meta name="description" content="암종별 표적항암제 종류와 2024~2025 최신 급여·비급여 비용을 3단계로 확인하세요. 산정특례 등록 방법부터 실손보험 활용법까지.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f7f8fa;
+  --white: #ffffff;
+  --primary: #1e5fa8;
+  --primary-light: #e8f0fb;
+  --primary-mid: #d0e2f7;
+  --accent: #e84c3d;
+  --accent-light: #fef0ee;
+  --green: #1a9e6e;
+  --green-light: #e6f7f2;
+  --yellow: #d97706;
+  --yellow-light: #fef3e2;
+  --text: #1a202c;
+  --text2: #4a5568;
+  --text3: #9aacbf;
+  --border: #e2e8f0;
+  --border2: #c9d9ed;
+  --radius: 16px;
+  --shadow: 0 2px 16px rgba(30,95,168,0.08);
+  --shadow-hover: 0 6px 24px rgba(30,95,168,0.14);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Pretendard', 'Noto Sans KR', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px 100px; }
+
+/* ── 하단 고정 배너 ── */
+.sticky-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 12px 16px;
+  background: var(--white);
+  box-shadow: 0 -4px 24px rgba(0,0,0,0.12);
+}
+.sticky-banner a {
+  display: flex;
+  align-items: center; justify-content: center;
+  gap: 10px;
+  max-width: 720px; margin: 0 auto;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 15px; font-weight: 700;
+  transition: background 0.2s;
+}
+.sticky-banner a:hover { background: #174f91; }
+.sticky-banner a .arrow {
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+.sticky-banner a:hover .arrow { transform: translateX(3px); }
+
+/* ── 히어로 ── */
+.hero {
+  padding: 48px 0 40px;
+  text-align: center;
+}
+.hero-kicker {
+  display: inline-block;
+  font-size: 12px; font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  border-radius: 100px; padding: 4px 14px;
+  margin-bottom: 20px; letter-spacing: 0.04em;
+}
+.hero h1 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(24px, 5vw, 34px);
+  font-weight: 700; line-height: 1.4;
+  color: var(--text); margin-bottom: 14px;
+}
+.hero h1 strong { color: var(--primary); }
+.hero-sub {
+  font-size: 14px; color: var(--text2);
+  max-width: 480px; margin: 0 auto 28px;
+  line-height: 1.8;
+}
+.hero-stats {
+  display: flex; justify-content: center; gap: 0;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.stat-item {
+  flex: 1; padding: 18px 12px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-num { font-size: 20px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.stat-label { font-size: 11px; color: var(--text3); }
+
+/* ── 프로그레스 ── */
+.progress-wrap {
+  padding: 28px 0 8px;
+}
+.progress-track {
+  display: flex; align-items: center;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0;
+  overflow: hidden;
+}
+.prog-step {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 14px 8px;
+  font-size: 13px; font-weight: 500; color: var(--text3);
+  border-right: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.prog-step:last-child { border-right: none; }
+.prog-step .n {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--border); color: var(--text3);
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all 0.3s;
+}
+.prog-step.active { color: var(--primary); background: var(--primary-light); }
+.prog-step.active .n { background: var(--primary); color: white; }
+.prog-step.done { color: var(--green); }
+.prog-step.done .n { background: var(--green); color: white; }
+.prog-step .label { white-space: nowrap; }
+
+/* ── 섹션 카드 ── */
+.section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  margin-top: 16px;
+  display: none;
+  animation: fadeUp 0.4s ease;
+}
+.section.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section-q {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 18px; font-weight: 700;
+  color: var(--text); margin-bottom: 6px;
+}
+.section-hint {
+  font-size: 13px; color: var(--text2);
+  margin-bottom: 20px;
+}
+
+/* ── 옵션 그리드 ── */
+.opt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.opt-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.opt {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 6px;
+  user-select: none;
+}
+.opt:hover { border-color: var(--primary); background: var(--primary-light); }
+.opt.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+.opt .icon { font-size: 28px; }
+.opt .name { font-size: 13px; font-weight: 600; color: var(--text); }
+.opt .sub  { font-size: 11px; color: var(--text3); }
+
+.opt-lg {
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex; align-items: flex-start; gap: 12px;
+  text-align: left;
+  user-select: none;
+}
+.opt-lg:hover { border-color: var(--primary); background: var(--primary-light); }
+.opt-lg.selected {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+.opt-lg .icon { font-size: 22px; flex-shrink: 0; margin-top: 1px; }
+.opt-lg .name { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
+.opt-lg .sub  { font-size: 12px; color: var(--text2); line-height: 1.5; }
+
+/* ── 정보 박스 ── */
+.info-box {
+  background: var(--primary-light);
+  border: 1px solid var(--primary-mid);
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 13px; color: var(--text2);
+  display: flex; gap: 10px; align-items: flex-start;
+  margin-bottom: 16px;
+}
+.info-box .icon { flex-shrink: 0; color: var(--primary); margin-top: 1px; }
+
+/* ── 다음 버튼 ── */
+.next-btn {
+  width: 100%; margin-top: 16px;
+  padding: 14px;
+  background: var(--primary);
+  color: white; border: none;
+  border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  font-family: inherit;
+  display: none;
+}
+.next-btn.show { display: block; animation: fadeUp 0.3s ease; }
+.next-btn:hover { background: #174f91; box-shadow: 0 4px 16px rgba(30,95,168,0.25); }
+
+/* ── 결과 화면 ── */
+#result { display: none; }
+#result.show { display: block; animation: fadeUp 0.5s ease; }
+
+/* 결과 상단 */
+.result-top {
+  background: var(--primary);
+  border-radius: var(--radius) var(--radius) 0 0;
+  padding: 28px 24px;
+  color: white;
+}
+.result-tag {
+  font-size: 11px; font-weight: 600;
+  background: rgba(255,255,255,0.2);
+  border-radius: 100px; padding: 3px 12px;
+  display: inline-block; margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+.result-top h2 {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 700; margin-bottom: 6px;
+}
+.result-top p { font-size: 13px; opacity: 0.8; }
+
+/* 비용 3단 */
+.cost-row {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid var(--border); border-top: none;
+  background: var(--white);
+}
+.cost-cell {
+  padding: 18px 12px; text-align: center;
+  border-right: 1px solid var(--border);
+}
+.cost-cell:last-child { border-right: none; }
+.cost-cell .cl { font-size: 11px; color: var(--text3); margin-bottom: 6px; line-height: 1.4; }
+.cost-cell .cv { font-size: 17px; font-weight: 700; line-height: 1.3; }
+.cost-cell .cv.g { color: var(--green); }
+.cost-cell .cv.y { color: var(--yellow); }
+.cost-cell .cv.r { color: var(--accent); }
+
+/* 약제 섹션 */
+.drug-section {
+  background: var(--white);
+  border: 1px solid var(--border); border-top: none;
+  padding: 22px 24px;
+}
+.drug-section-title {
+  font-size: 12px; font-weight: 700; color: var(--text3);
+  letter-spacing: 0.08em; margin-bottom: 14px;
+}
+.drug-list { display: flex; flex-direction: column; gap: 8px; }
+.drug-item {
+  border: 1px solid var(--border);
+  border-radius: 10px; padding: 14px;
+  display: flex; justify-content: space-between;
+  align-items: flex-start; gap: 12px;
+}
+.drug-item.covered { border-left: 3px solid var(--green); }
+.drug-item.uncovered { border-left: 3px solid var(--accent); }
+.drug-name { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.drug-sub { font-size: 12px; color: var(--text2); }
+.drug-price { text-align: right; flex-shrink: 0; }
+.drug-price .pv { font-size: 13px; font-weight: 700; white-space: nowrap; }
+.drug-price .pv.g { color: var(--green); }
+.drug-price .pv.r { color: var(--accent); }
+.drug-price .pu { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.badge {
+  display: inline-block;
+  font-size: 10px; font-weight: 600;
+  border-radius: 4px; padding: 1px 6px;
+  margin-left: 6px; vertical-align: middle;
+}
+.badge.g { background: var(--green-light); color: var(--green); }
+.badge.r { background: var(--accent-light); color: var(--accent); }
+
+/* 산정특례 안내 */
+.guide-section {
+  background: var(--white);
+  border: 1px solid var(--border); border-top: none;
+  padding: 22px 24px;
+}
+.guide-title { font-size: 14px; font-weight: 700; margin-bottom: 14px; color: var(--text); }
+.guide-steps { display: flex; flex-direction: column; gap: 10px; }
+.guide-step {
+  display: flex; align-items: flex-start; gap: 12px;
+}
+.guide-step .num {
+  width: 24px; height: 24px;
+  background: var(--primary); color: white;
+  border-radius: 50%; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.guide-step .text { font-size: 13px; color: var(--text2); line-height: 1.6; }
+.guide-step .text strong { color: var(--text); }
+
+/* 부작용 브릿지 */
+.bridge {
+  background: var(--yellow-light);
+  border: 1px solid #fde68a; border-top: none;
+  padding: 22px 24px;
+}
+.bridge-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+.bridge-desc { font-size: 13px; color: var(--text2); line-height: 1.8; margin-bottom: 16px; }
+.se-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.se-pill {
+  font-size: 12px; color: var(--text2);
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 100px; padding: 4px 12px;
+}
+
+/* CTA */
+.cta {
+  background: var(--white);
+  border: 1px solid var(--border); border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  padding: 22px 24px;
+}
+.cta p { font-size: 14px; color: var(--text2); margin-bottom: 16px; line-height: 1.7; }
+.cta-row { display: flex; gap: 10px; }
+.btn-main {
+  flex: 1; padding: 14px;
+  background: var(--primary); color: white;
+  border: none; border-radius: 10px;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer; transition: all 0.2s;
+  font-family: inherit; text-decoration: none;
+  display: flex; align-items: center; justify-content: center;
+}
+.btn-main:hover { background: #174f91; }
+.btn-sub {
+  flex: 1; padding: 14px;
+  background: transparent; color: var(--text2);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: all 0.2s;
+  font-family: inherit; text-decoration: none;
+  display: flex; align-items: center; justify-content: center;
+}
+.btn-sub:hover { border-color: var(--primary); color: var(--primary); }
+
+/* 재시작 */
+.restart {
+  width: 100%; margin-top: 12px;
+  padding: 10px;
+  background: transparent; color: var(--text3);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+  font-size: 13px; cursor: pointer;
+  font-family: inherit; transition: all 0.2s;
+}
+.restart:hover { color: var(--text2); border-color: var(--text3); }
+
+/* 면책 */
+.disc {
+  font-size: 11px; color: var(--text3);
+  text-align: center; margin-top: 20px;
+  line-height: 1.8; padding: 0 8px;
+}
+.disc a { color: var(--primary); text-decoration: none; }
+
+/* 모바일 */
+@media (max-width: 520px) {
+  .opt-grid { grid-template-columns: repeat(2, 1fr); }
+  .cost-row { grid-template-columns: 1fr 1fr; }
+  .cost-cell:nth-child(3) { grid-column: span 2; border-right: none; border-top: 1px solid var(--border); }
+  .cta-row { flex-direction: column; }
+  .prog-step .label { display: none; }
+  .hero-stats { flex-direction: column; }
+  .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 하단 고정 배너 -->
+<div class="sticky-banner">
+  <a href="https://withhimcancer.com/" target="_blank" rel="noopener">
+    항암 부작용이 걱정된다면 클릭하세요 <span class="arrow">→</span>
+  </a>
+</div>
+
+<div class="wrap">
+
+  <!-- 히어로 -->
+  <div class="hero">
+    <span class="hero-kicker">표적항암치료 비용 완전 가이드</span>
+    <h1>내 암종에 맞는<br><strong>표적항암제와 실제 비용</strong>을<br>3단계로 확인하세요</h1>
+    <p class="hero-sub">같은 약이라도 보험 상태에 따라 월 30만 원 vs 월 500만 원 이상으로 달라집니다. 내 상황을 선택하면 정확한 범위를 알려드려요.</p>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">6종</div>
+        <div class="stat-label">주요 암종 지원</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">산정특례 5%</div>
+        <div class="stat-label">본인부담 절감 가능</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">2024~2025</div>
+        <div class="stat-label">최신 급여 기준 반영</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 프로그레스 -->
+  <div class="progress-wrap">
+    <div class="progress-track">
+      <div class="prog-step active" id="ps1"><span class="n">1</span><span class="label">암종 선택</span></div>
+      <div class="prog-step" id="ps2"><span class="n">2</span><span class="label">보험 상태</span></div>
+      <div class="prog-step" id="ps3"><span class="n">3</span><span class="label">비용 확인</span></div>
+    </div>
+  </div>
+
+  <!-- STEP 1 -->
+  <div class="section active" id="step1">
+    <p class="section-q">어떤 암을 진단받으셨나요?</p>
+    <p class="section-hint">암종에 따라 사용 가능한 표적항암제가 달라집니다.</p>
+    <div class="opt-grid" id="g1">
+      <button class="opt" data-v="lung" onclick="pick1(this)"><span class="icon">🫁</span><span class="name">폐암</span><span class="sub">비소세포폐암 포함</span></button>
+      <button class="opt" data-v="breast" onclick="pick1(this)"><span class="icon">🎗️</span><span class="name">유방암</span><span class="sub">HER2·BRCA 포함</span></button>
+      <button class="opt" data-v="colon" onclick="pick1(this)"><span class="icon">🔵</span><span class="name">대장암</span><span class="sub">결장·직장암 포함</span></button>
+      <button class="opt" data-v="stomach" onclick="pick1(this)"><span class="icon">🟤</span><span class="name">위암</span><span class="sub">HER2 양성 포함</span></button>
+      <button class="opt" data-v="blood" onclick="pick1(this)"><span class="icon">🩸</span><span class="name">혈액암</span><span class="sub">CML·림프종 포함</span></button>
+      <button class="opt" data-v="kidney" onclick="pick1(this)"><span class="icon">🫘</span><span class="name">신장암</span><span class="sub">신세포암 포함</span></button>
+    </div>
+    <button class="next-btn" id="n1" onclick="go2()">다음 — 보험 상태 확인 →</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div class="section" id="step2">
+    <p class="section-q">현재 건강보험 상태를 알려주세요</p>
+    <p class="section-hint">보험 적용 여부에 따라 실제 납부 금액이 크게 달라집니다.</p>
+    <div class="info-box">
+      <span class="icon">💡</span>
+      <span>암 진단 후 <strong>산정특례를 등록</strong>하면 급여 항암제 본인부담이 <strong>30% → 5%</strong>로 줄어듭니다. 등록 방법은 결과 화면에서 안내해 드립니다.</span>
+    </div>
+    <div class="opt-grid-2" id="g2">
+      <button class="opt-lg" data-v="s5" onclick="pick2(this)">
+        <span class="icon">✅</span>
+        <div><div class="name">산정특례 등록 완료</div><div class="sub">급여 항목 본인부담 5%<br>암 진단 후 5년간 적용</div></div>
+      </button>
+      <button class="opt-lg" data-v="n30" onclick="pick2(this)">
+        <span class="icon">📋</span>
+        <div><div class="name">일반 건강보험</div><div class="sub">급여 항목 본인부담 30%<br>산정특례 미등록 상태</div></div>
+      </button>
+      <button class="opt-lg" data-v="ng" onclick="pick2(this)">
+        <span class="icon">💊</span>
+        <div><div class="name">비급여 약제 사용 중/예정</div><div class="sub">신약·비급여 표적항암제<br>약값 전액 자기부담</div></div>
+      </button>
+      <button class="opt-lg" data-v="idk" onclick="pick2(this)">
+        <span class="icon">❓</span>
+        <div><div class="name">아직 잘 모르겠어요</div><div class="sub">전반적인 비용 범위를<br>먼저 파악하고 싶어요</div></div>
+      </button>
+    </div>
+    <button class="next-btn" id="n2" onclick="showResult()">결과 보기 →</button>
+  </div>
+
+  <!-- RESULT -->
+  <div id="result">
+    <div class="result-top">
+      <span class="result-tag">✓ 맞춤 결과</span>
+      <h2 id="r-title">폐암 · 산정특례 적용 기준</h2>
+      <p id="r-sub">아래는 2024~2025 최신 기준 주요 표적항암제와 예상 비용입니다.</p>
+    </div>
+
+    <div class="cost-row">
+      <div class="cost-cell"><div class="cl">산정특례 5%<br>급여 적용 시</div><div class="cv g" id="c1">–</div></div>
+      <div class="cost-cell"><div class="cl">일반 건강보험<br>30% 적용 시</div><div class="cv y" id="c2">–</div></div>
+      <div class="cost-cell"><div class="cl">비급여<br>전액 자기부담</div><div class="cv r" id="c3">–</div></div>
+    </div>
+
+    <div class="drug-section">
+      <div class="drug-section-title">주요 표적항암제 목록 (2024~2025 급여 기준)</div>
+      <div class="drug-list" id="dlist"></div>
+    </div>
+
+    <div class="guide-section">
+      <div class="guide-title">📌 산정특례 등록 방법 (본인부담 5% 적용받는 법)</div>
+      <div class="guide-steps">
+        <div class="guide-step"><div class="num">1</div><div class="text"><strong>암 확진 후 주치의에게 신청</strong> — 진료를 받고 있는 병원에 산정특례 등록 요청</div></div>
+        <div class="guide-step"><div class="num">2</div><div class="text"><strong>건강보험공단에 서류 제출</strong> — 의사소견서·신청서 제출 (공단 앱/우편/방문 모두 가능)</div></div>
+        <div class="guide-step"><div class="num">3</div><div class="text"><strong>등록 완료 후 5년간 적용</strong> — 암 관련 진료비 전체의 본인부담이 5%로 감소</div></div>
+        <div class="guide-step"><div class="num">참고</div><div class="text">비급여 약제(신약 등)는 산정특례와 무관하게 전액 자기부담입니다. 실손보험·암보험 <strong>표적항암약물허가치료비 특약</strong>으로 추가 보장 가능.</div></div>
+      </div>
+    </div>
+
+    <div class="bridge">
+      <div class="bridge-title">⚠️ 비용만큼 꼭 준비해야 할 것 — 부작용 관리</div>
+      <div class="bridge-desc">표적항암제는 일반 항암제보다 부작용이 적지만, 치료 기간 중 다양한 부작용이 지속될 수 있어요. 부작용을 방치하면 치료 용량이 줄거나 치료를 중단해야 하는 상황이 생깁니다.</div>
+      <div class="se-pills" id="sepills"></div>
+      <div class="bridge-desc" style="margin-bottom:0">위드힘병원은 <strong>아산병원·성모병원 종양내과 출신 의료진</strong>이 표적항암 치료 중 부작용을 전문 관리합니다. 상급병원 치료와 병행 이용 가능합니다.</div>
+    </div>
+
+    <div class="cta">
+      <p>치료비 걱정과 부작용 관리, 두 가지를 함께 상담받고 싶다면<br>위드힘병원에 문의해 보세요.</p>
+      <div class="cta-row">
+        <a class="btn-main" href="https://withhimcancer.com/sub6.php" target="_blank">📞 무료 상담 예약</a>
+        <a class="btn-sub" href="https://withhimcancer.com" target="_blank">병원 자세히 보기</a>
+      </div>
+    </div>
+
+    <button class="restart" onclick="reset()">↺ 처음부터 다시 선택하기</button>
+    <p class="disc">
+      ※ 위 비용은 보건복지부 건강보험정책심의위원회 및 공개 자료 기준 참고용 예시입니다.<br>
+      실제 비용은 처방 약제·병원·보험 가입 현황에 따라 달라질 수 있습니다.<br>
+      급여 기준 확인 → <a href="https://www.hira.or.kr" target="_blank">건강보험심사평가원</a> / 산정특례 신청 → <a href="https://www.nhis.or.kr" target="_blank">국민건강보험공단</a>
+    </p>
+  </div>
+
+</div><!-- /wrap -->
+
+<script>
+const DB = {
+  lung: {
+    label: '폐암 (비소세포폐암)',
+    c1: '월 약 28~50만 원',
+    c2: '월 약 170~300만 원',
+    c3: '월 약 500~1,000만 원',
+    drugs: [
+      { name: '타그리소 (오시머티닙)', sub: 'EGFR 변이 1·2차 치료 — 2024.1 급여 확대', p: '월 약 28만 원', pu: '산정특례 5% 기준 (연 340만 원)', c: true },
+      { name: '렉라자 (레이저티닙)', sub: 'EGFR 변이 1차 치료 — 2024.1 급여 적용 (국산신약)', p: '월 약 19만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '잴코리 (크리조티닙)', sub: 'ALK 양성 1차 치료', p: '월 약 30~60만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '알레센자 (알렉티닙)', sub: 'ALK 양성 1·2차 치료', p: '월 약 40~80만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '키트루다 (펨브롤리주맙)', sub: 'PD-L1 발현 — EGFR·ALK 변이 없는 경우', p: '월 약 200~400만 원', pu: '비급여 기준 (급여 조건 제한적)', c: false },
+    ],
+    se: ['피부 발진·건조', '설사·복통', '식욕 저하', '피로·무력감', '간 수치 이상', '구역·구토', '손발 저림'],
+  },
+  breast: {
+    label: '유방암',
+    c1: '월 약 34~60만 원',
+    c2: '월 약 150~350만 원',
+    c3: '월 약 400~800만 원',
+    drugs: [
+      { name: '허셉틴 (트라스투주맙)', sub: 'HER2 양성 — 표준 1차 치료', p: '회당 약 5~10만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '엔허투 (트라스투주맙데룩스테칸)', sub: 'HER2 양성 2차 이상 — 2024.4 급여 적용', p: '월 약 34만 원', pu: '산정특례 5% 기준 (연간 417만 원)', c: true },
+      { name: '퍼제타 (퍼투주맙)', sub: 'HER2 양성 — 허셉틴 병용, 수술 전 선별급여', p: '회당 약 15~30만 원', pu: '산정특례 5% / 선별급여 30%', c: true },
+      { name: '캐싸일라 (T-DM1)', sub: 'HER2 양성 2차 치료', p: '회당 약 30~80만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '린파자 (올라파립)', sub: 'BRCA 변이 양성', p: '월 약 300~500만 원', pu: '비급여 기준', c: false },
+    ],
+    se: ['오심·구토', '피로감', '심장 기능 모니터링', '탈모', '관절통', '손발 저림', '간질성 폐렴(엔허투)'],
+  },
+  colon: {
+    label: '대장암 (결장·직장암)',
+    c1: '월 약 40~120만 원',
+    c2: '월 약 200~500만 원',
+    c3: '월 약 500~1,200만 원',
+    drugs: [
+      { name: '아바스틴 (베바시주맙)', sub: 'VEGF 억제 — RAS·BRAF 무관 병용', p: '회당 약 10~30만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '얼비툭스 (세툭시맙)', sub: 'EGFR 억제 — RAS 야생형', p: '회당 약 20~50만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '비라토비 (엔코라페닙)', sub: 'BRAF V600E 변이 — 급여 심사 지연 중', p: '월 약 700~1,200만 원', pu: '비급여 기준 (급여화 대기 중)', c: false },
+      { name: '스티바가 (레고라페닙)', sub: '3차 이상 치료', p: '월 약 300~500만 원', pu: '비급여 기준', c: false },
+    ],
+    se: ['고혈압', '출혈 위험', '피부 발진 (여드름성)', '설사·복통', '피로', '구내염', '손발 저림'],
+  },
+  stomach: {
+    label: '위암',
+    c1: '월 약 30~70만 원',
+    c2: '월 약 150~350만 원',
+    c3: '월 약 400~800만 원',
+    drugs: [
+      { name: '허셉틴 (트라스투주맙)', sub: 'HER2 양성 — 1차 치료 화학요법 병용', p: '회당 약 5~10만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '엔허투 (트라스투주맙데룩스테칸)', sub: 'HER2 양성 3차 이상 — 2024.4 급여 적용', p: '월 약 34만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '사이람자 (라무시루맙)', sub: 'VEGFR2 억제 — 2차 이상 치료', p: '회당 약 30~80만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '옵디보 (니볼루맙)', sub: '면역항암제 병용', p: '월 약 300~600만 원', pu: '비급여 기준 (조건부 급여 일부)', c: false },
+    ],
+    se: ['식욕 부진', '오심·구토', '설사', '피로·무력감', '고혈압', '간질성 폐렴', '혈전 위험'],
+  },
+  blood: {
+    label: '혈액암 (CML·림프종 등)',
+    c1: '월 약 10~50만 원',
+    c2: '월 약 100~300만 원',
+    c3: '월 약 300~600만 원',
+    drugs: [
+      { name: '글리벡 (이마티닙) / 제네릭', sub: 'CML 1차 치료 — 제네릭 사용으로 비용 대폭 감소', p: '월 약 5~15만 원', pu: '산정특례 5% 기준 (오리지널 대비 90% 절감)', c: true },
+      { name: '스프라이셀 (다사티닙)', sub: 'CML 2차 이상 / 이마티닙 내성', p: '월 약 30~70만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '자카비 (룩소리티닙)', sub: '골수섬유화증 — 급여 적용', p: '월 약 30~80만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '칼퀀스 (아칼라브루티닙)', sub: 'CLL·맨틀세포림프종', p: '월 약 400~600만 원', pu: '비급여 기준', c: false },
+    ],
+    se: ['혈구 감소 (빈혈·감염·출혈)', '부종', '근육통·경련', '오심', '피로', '흉막·심낭 삼출 (다사티닙)'],
+  },
+  kidney: {
+    label: '신장암 (신세포암)',
+    c1: '월 약 30~80만 원',
+    c2: '월 약 150~350만 원',
+    c3: '월 약 400~700만 원',
+    drugs: [
+      { name: '수텐 (수니티닙)', sub: 'VEGFR 억제 — 1차 치료', p: '월 약 30~60만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '인라이타 (악시티닙)', sub: '2차 이상 치료', p: '월 약 40~80만 원', pu: '산정특례 5% 기준', c: true },
+      { name: '카보메틱스 (카보잔티닙)', sub: '2차 이상 치료', p: '월 약 300~500만 원', pu: '비급여 기준', c: false },
+      { name: '키트루다+인라이타 병용', sub: '면역항암+표적 1차 병용요법', p: '월 약 400~700만 원', pu: '비급여 기준', c: false },
+    ],
+    se: ['고혈압', '피로·무력감', '손발 증후군 (물집·통증)', '설사', '갑상선 기능 이상', '단백뇨'],
+  },
+};
+
+let c1 = null, c2 = null;
+
+function pick1(btn) {
+  document.querySelectorAll('#g1 .opt').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  c1 = btn.dataset.v;
+  document.getElementById('n1').classList.add('show');
+}
+
+function pick2(btn) {
+  document.querySelectorAll('#g2 .opt-lg').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  c2 = btn.dataset.v;
+  document.getElementById('n2').classList.add('show');
+}
+
+function go2() {
+  if (!c1) return;
+  document.getElementById('step1').classList.remove('active');
+  document.getElementById('step2').classList.add('active');
+  setProg(2);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showResult() {
+  if (!c2) return;
+  document.getElementById('step2').classList.remove('active');
+  setProg(3);
+
+  const d = DB[c1];
+  const ins = { s5: '산정특례(5%) 적용', n30: '일반 건강보험(30%)', ng: '비급여 기준', idk: '비용 범위 안내' };
+
+  document.getElementById('r-title').textContent = `${d.label} · ${ins[c2]} 기준`;
+  document.getElementById('c1').textContent = d.c1;
+  document.getElementById('c2').textContent = d.c2;
+  document.getElementById('c3').textContent = d.c3;
+
+  document.getElementById('dlist').innerHTML = d.drugs.map(drug => `
+    <div class="drug-item ${drug.c ? 'covered' : 'uncovered'}">
+      <div>
+        <div class="drug-name">${drug.name}<span class="badge ${drug.c ? 'g' : 'r'}">${drug.c ? '급여' : '비급여'}</span></div>
+        <div class="drug-sub">${drug.sub}</div>
+      </div>
+      <div class="drug-price">
+        <div class="pv ${drug.c ? 'g' : 'r'}">${drug.p}</div>
+        <div class="pu">${drug.pu}</div>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('sepills').innerHTML = d.se.map(s => `<span class="se-pill">⚠️ ${s}</span>`).join('');
+
+  document.getElementById('result').classList.add('show');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function setProg(n) {
+  ['ps1','ps2','ps3'].forEach((id, i) => {
+    const el = document.getElementById(id);
+    el.classList.remove('active', 'done');
+    if (i + 1 < n) el.classList.add('done');
+    else if (i + 1 === n) el.classList.add('active');
+  });
+}
+
+function reset() {
+  c1 = null; c2 = null;
+  document.querySelectorAll('.opt, .opt-lg').forEach(b => b.classList.remove('selected'));
+  document.getElementById('n1').classList.remove('show');
+  document.getElementById('n2').classList.remove('show');
+  document.getElementById('result').classList.remove('show');
+  document.getElementById('step2').classList.remove('active');
+  document.getElementById('step1').classList.add('active');
+  setProg(1);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
